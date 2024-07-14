@@ -22,6 +22,7 @@ function App() {
     await fetchDataFromApi()
       .then((res) => {
         setCustomers(res.record.customers);
+        setSearch(res.record.customers)
         setTransactions(res.record.transactions);
         setLoading(false);
       })
@@ -68,7 +69,10 @@ function App() {
       ],
     };
   };
+const FilterSearchData =(event)=>{
+setSearch(customers.filter(f=> f.name.toLowerCase().toUpperCase().includes(event.target.value)))
 
+}
   return (
     <>
     <div className="text-center"><h1 className="text-white mainH1">Transactions <i class="fa-brands fa-ubuntu fs-2"></i></h1> </div>
@@ -76,7 +80,7 @@ function App() {
    <div className="table-responsive text-center ">
         <div className="search-container my-5">
           <input
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={FilterSearchData}
             type="text"
             name="search"
             placeholder="Search..."
@@ -99,13 +103,7 @@ function App() {
           <h3 className="text-white position-absolute start-50 translate-middle-x top-50 ">Loading.....</h3>
             ) : (
               <>
-                {customers
-                  .filter((item) => {
-                    return search.toLowerCase() === ""
-                      ? item
-                      : item.name.toLowerCase().includes(search);
-                  })
-                  .map((cus, idx) => (
+                {search.map((cus, idx) => (
                     <tr key={idx} className="rtt">
                       <td>{cus.id}</td>
                       <td>{cus.name}</td>
