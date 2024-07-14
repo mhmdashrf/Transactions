@@ -27,6 +27,138 @@
 .App-link {
   color: #61dafb;
 }
+.table-responsive{
+  width: 75% !important;
+  margin:  0 auto;
+  overflow: none !important;
+}
+.mainH1{
+  position: relative;
+  padding: 20px;
+  font-size: 45px;
+}
+.mainH1::before,.mainH1::after
+    {
+     content: "";
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    }
+.mainH1::after{
+  background-color: #0c14eb;
+    bottom: 5px;
+    height: 1px;
+    width: 160px;
+}
+.mainH1::before{
+  border-color:  #0c14eb;
+  border-style: solid;
+  border-width: 1px 0;
+  bottom: 0;
+  padding: 4px 0 5px;
+  width: 70px;
+}
+.input-group {
+  position: relative;
+}
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #dfdbdb;
+  border-radius: 10px;
+  box-shadow: 0 4px 2px -2px #dde0dfdc;
+}
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  font-size: 16px;
+  padding: 0px 10px;
+  color: #000;
+  transition: 0.3s;
+  pointer-events: none;
+  background-color: #fff !important;
+}
+.test {
+  width: 90px;
+  padding: 10px 20px;
+  background-color: rgba(195, 195, 217, 0.884);
+  border: 0;
+  border: 1px solid #dddddd2d;
+  border-radius: 10px;
+}
+.input:focus + .placeholder {
+  top: -13px;
+  color: #1841d5;
+  font-weight: 600;
+  background-color: #fff;
+}
+.visitIcon {
+  position: relative;
+  z-index: 5;
+  color: #262626;
+  transition: 1s;
+}
+.test:hover .visitIcon {
+  transform: rotateY(360deg);
+  color: #fff;
+}
+.table {
+  vertical-align: middle !important;
+}
+
+.test::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1c7ce9, #021c3a);
+  left: 0;
+  top: 100%;
+  transition: 1.2s;
+}
+.test:hover::before {
+  top: 0;
+}
+thead {
+  background-color: #61dafb;
+}
+
+.search-container {
+  background: rgba(225, 225, 225, 0);
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.search-container:hover > .search-input {
+  width: 400px;
+  border-bottom: 1px solid #fff;
+}
+
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+}
+.search-container .search-input::placeholder{
+  color: #fff;
+}
+.search-container .search-btn {
+  color: #0c14eb;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -34,5 +166,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media(max-width:676px){
+  .table-responsive{
+    width: 90% !important;
+    font-size: 10px;
+  }
+  .mainH1{
+    font-size: 35px;
   }
 }
