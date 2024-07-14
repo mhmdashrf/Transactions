@@ -37,8 +37,7 @@
   padding: 20px;
   font-size: 45px;
 }
-.mainH1::before,.mainH1::after
-    {
+.mainH1::before,.mainH1::after{
      content: "";
     left: 0;
     margin: 0 auto;

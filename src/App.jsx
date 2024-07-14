@@ -73,7 +73,7 @@ function App() {
     <>
     <div className="text-center"><h1 className="text-white mainH1">Transactions <i class="fa-brands fa-ubuntu fs-2"></i></h1> </div>
   
-   <div className="table-responsive text-center  my-4">
+   <div className="table-responsive text-center ">
         <div className="search-container my-5">
           <input
             onChange={(e) => setSearch(e.target.value)}
@@ -96,7 +96,7 @@ function App() {
           </thead>
           <tbody id="bodyTable">
             {loading ? (
-              "loading...."
+          <h3 className="text-white position-absolute start-50 translate-middle-x top-50 ">Loading.....</h3>
             ) : (
               <>
                 {customers
