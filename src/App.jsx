@@ -70,7 +70,7 @@ function App() {
     };
   };
 const FilterSearchData =(event)=>{
-setSearch(customers.filter(f=> f.name.toLowerCase().toUpperCase().includes(event.target.value)))
+setSearch(customers.filter(f=> f.name.toLowerCase().includes(event.target.value)))
 
 }
   return (
